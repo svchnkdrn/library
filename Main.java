@@ -122,7 +122,7 @@ class Library {
         System.out.println("Available books: ");
         for(int i = 0; i < arr.length; i++){
             Book book = arr[i];
-            if (book != null) {
+            if (book != null && book.getIsBorrowed()==false) {
                 System.out.println(book);
             }
         }
