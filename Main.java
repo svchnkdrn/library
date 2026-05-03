@@ -66,15 +66,18 @@ class Book{
     }
 
     public void borrow(){
+
         if(getIsBorrowed() == true){
             System.out.println("You can't borrow this book");
         }else{
             System.out.println("You can borrow this book");
+            setIsBorrowed(true);
         }
     }
     public void returnBack(){
         if(getIsBorrowed() == true){
             System.out.println("You can return this book");
+            setIsBorrowed(false);
         }else{
             System.out.println("You can't return this book");
         }
