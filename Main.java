@@ -129,19 +129,18 @@ class Library {
     }
 
     public void printBorrowedBooks(){
-        boolean hasBorrowedBooks = false; 
+        boolean hasBorrowedBooks = false;
+        System.out.println("Borrowed books: "); 
         for(int i = 0; i < size; i++){
             Book book = arr[i];
             if (book != null && book.getIsBorrowed() == true) {
                 hasBorrowedBooks= true;
-                System.out.println("Borrowed books: " + book.getTitle() + " - " + book.getAuthor());
-            } else {
-
-                if(hasBorrowedBooks==false){
-                    System.out.println("No borrowed books.");
-                }
-            }
+                System.out.println(book.getTitle() + " - " + book.getAuthor());
+            } 
         }
+        if(hasBorrowedBooks==false){
+                System.out.println("No borrowed books.");
+            }
     }
     public int countAvailableBooks(){
         int count = 0;
