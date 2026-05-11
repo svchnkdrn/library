@@ -130,20 +130,18 @@ class Library {
 
     public void printBorrowedBooks(){
         boolean hasBorrowedBooks = false; 
-        Book book;
-        System.out.println("Borrowed books: ");
         for(int i = 0; i < size; i++){
-            book = arr[i];
+            Book book = arr[i];
             if (book != null && book.getIsBorrowed() == true) {
                 hasBorrowedBooks= true;
-                System.out.println(book.getTitle() + " - " + book.getAuthor());
-            }
-        }
-            if(hasBorrowedBooks==false){
+                System.out.println("Borrowed books: " + book.getTitle() + " - " + book.getAuthor());
+            } else {
+
+                if(hasBorrowedBooks==false){
                     System.out.println("No borrowed books.");
                 }
-        
-        
+            }
+        }
     }
     public int countAvailableBooks(){
         int count = 0;
@@ -191,7 +189,7 @@ public class Main {
         Book [] arr = new Book[5];
         arr[0] = new Book("Don Quixote" , "Miguel de Cervantes", false);
         arr[1] = new Book("Alice's Adventures in Wonderland" , "Lewis Carroll", false);
-        arr[2] = new Book("The Adventures of Huckleberry Finn" , "Mark Twain",false);
+        arr[2] = new Book("The Adventures of Huckleberry Finn" , "Mark Twain", true);
         arr[3] = new Book("The Adventures of Tom Sawyer" , "Mark Twain", false);
         arr[4] = new Book("Treasure Island" , "Robert Louis Stevenson", false);
         
