@@ -1,58 +1,19 @@
-// Book + Library
-
-// Book:
-// private String title; private String author; private boolean isBorrowed;  cделали
-// Методы:
-// borrow(): нельзя взять уже взятую сделали
-// returnBack(): нельзя вернуть уже доступную хз или правильно
-// геттеры для title/author, но не “сетить” всё подряд без причины без причины? не сделала вообще сетеры только гетеры
-
-// Library:
-// хранит несколько книг (массив/список) хз или правильно
-// addBook(Book book) сделали
-// findByTitle(String title) (простая линейная проверка)
-// printAvailableBooks()
-
-
-
-
-// void printBorrowedBooks() da
-// Что делает: печатает только взятые книги (isBorrowed == true).
-
-// Дополнительно: если таких книг нет, вывести "No borrowed books". da
-// int countAvailableBooks() da
-// Что делает: возвращает количество доступных книг (isBorrowed == false) среди реально добавленных (0..size-1).
-
-// int countBooksByAuthor(String author) da no mozno s equals? 
-// Что делает: возвращает количество книг определенного автора.
-
-// void printAllBooksWithStatus() da
-// Что делает: печатает все книги с их статусом:
-// AVAILABLE
-// BORROWED
-// Пример строки:
-// Treasure Island - Robert Louis Stevenson [AVAILABLE]
-
 
 class Book{
     private String m_title;
     private String m_author;
     private boolean m_isBorrowed;
     
-
-    // constructor(s):
     Book(String title, String author, boolean isBorrowed){
         m_title = title;
         m_author = author;
         this.m_isBorrowed = isBorrowed;
     }
-    
-    // setters and getters
+
     public void setIsBorrowed(boolean bor){ 
         m_isBorrowed = bor;
     }
 
-    
     public boolean getIsBorrowed(){
         return m_isBorrowed;
     }
@@ -117,7 +78,6 @@ class Library {
        return null;
     }
     
-    // !
     public void printAvailableBooks(){
         System.out.println("Available books: ");
         for(int i = 0; i < arr.length; i++){
@@ -157,8 +117,7 @@ class Library {
         int count = 0;
         for(int i = 0; i < size; i++){
             Book book = arr[i];
-            // if(book != null && book.getAuthor().equalsIgnoreCase(author))
-            if(book != null && book.getAuthor() == isAuthor ){
+            if(book != null && book.getAuthor().equalsIgnoreCase(isAuthor) ){
                 count +=1 ;
             }
         }
